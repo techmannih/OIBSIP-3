@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .todo-container {
+    padding: 40px;
+    background-color: transparent;
+  
+    background-image: url(img/images.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.318);
+  }
+  .container {
+    width: 45vw;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.318);
+    background-color: rgba(255, 255, 255, 0.36);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .container h1 {
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.637);
+  
+    color: rgb(41, 39, 39);
+  }
+  
+  #new-topic-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  
+    margin-top: 10px;
+  }
+  
+  #new-topic-form:focus-within {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+  }
+  
+  #new-topic-form #new-topic-input {
+    width: 30vw;
+    height: 56px;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.185);
+    padding: 0 13px 0 13px;
+    border: none;
+    color: rgb(41, 39, 39);
+    outline: none;
+  
+    border-radius: 15px 0 0 15px;
+  }
+  
+  #new-topic-form #new-topic-input::placeholder {
+    color: rgba(0, 0, 0, 0.675);
+  }
+  
+  #new-topic-form #new-topic-input:focus + #new-topic-submit {
+    color: rgb(114, 223, 114);
+    background-color: rgb(99, 95, 95);
+    transition: 0.5s ease-in-out;
+  }
+  
+  #new-topic-form #new-topic-submit {
+    font-weight: 700;
+    font-size: 22px;
+    color: rgb(41, 40, 40);
+    width: 7vw;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0.185);
+    border: none;
+    cursor: pointer;
+    border-radius: 0 15px 15px 0;
+  }
+  
+  #new-topic-form #new-topic-submit:hover {
+    color: rgb(114, 223, 114);
+    background-color: rgb(99, 95, 95);
+    transition: 0.3s ease-in-out;
+    border: none;
+  }
+  
+  .topic-list {
+    width: 45vw;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.318);
+    background-color: rgba(255, 255, 255, 0.36);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 15px;
+  }
+  
+  #topics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #topics .topic {
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.185);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #topics .topic:hover {
+    outline: 1px solid rgb(99, 95, 95);
+    transform: scale(1.04);
+    transition: 0.15s ease-in-out;
+  }
+  
+  #topics .topic .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    visibility: hidden;
+  }
+  
+  #topics .topic .content .text {
+    width: 25vw;
+    background-color: transparent;
+    height: 37px;
+    padding: 0 0 0 20px;
+    font-size: 20px;
+    border: none;
+    color: rgb(41, 39, 39);
+    outline: none;
+  }
+  
+  #topics .topic:hover .actions {
+    visibility: visible;
+  }
+  
+  #topics .topic .actions .update {
+    font-size: 18px;
+    color: black;
+    width: 7vw;
+    height: 37px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  #topics .topic .actions .update:hover {
+    color: rgb(114, 223, 114);
+    background-color: rgb(99, 95, 95);
+    transition: 0.3s ease-in-out;
+  }
+  
+  #topics .topic .actions .delete {
+    font-size: 18px;
+    color: black;
+    width: 7vw;
+    height: 37px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  #topics .topic .actions .delete:hover {
+    color: rgb(114, 223, 114);
+    background-color: rgb(99, 95, 95);
+    transition: 0.3s ease-in-out;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .container {
+      width: 70vw;
+    }
+  
+    #new-topic-form {
+      border: none;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #new-topic-form:focus-within {
+      outline: none;
+    }
+  
+    #new-topic-form #new-topic-input {
+      width: 65vw;
+      border-radius: 15px;
+    }
+  
+    #new-topic-form:focus-within {
+      border: none;
+    }
+  
+    #new-topic-form #new-topic-submit {
+      width: 25vw;
+      border-radius: 15px;
+    }
+  
+    .topic-list {
+      width: 70vw;
+    }
+  
+    #topics .topic {
+      border-radius: 0px;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    #topics .topic:hover {
+      outline: none;
+    }
+  
+    #topics .topic .content .text {
+      border-radius: 3px;
+      background-color: rgba(0, 0, 0, 0.185);
+      width: 65vw;
+    }
+  
+    #topics .topic .actions .update {
+      font-size: 15px;
+      width: 15vw;
+      background-color: rgba(0, 0, 0, 0.147);
+      border-radius: 15px;
+    }
+  
+    #topics .topic .actions .delete {
+      background-color: rgba(0, 0, 0, 0.147);
+      font-size: 15px;
+      width: 15vw;
+      border-radius: 15px;
+    }
+  
+    #topics .topic .content:hover ~ .actions .update {
+      color: rgb(114, 223, 114);
+      background-color: rgb(99, 95, 95);
+      transition: 0.5s ease-in-out;
+      border-radius: 15px;
+    }
+  
+    #topics .topic .content:hover ~ .actions .delete {
+      color: rgb(114, 223, 114);
+      background-color: rgb(99, 95, 95);
+      transition: 0.5s ease-in-out;
+      border-radius: 15px;
+    }}
+  
