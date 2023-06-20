@@ -12,6 +12,6 @@ This project is built using:-
  
  
 ## Project Info 
-BookBuddy is a fully responsive website for creating a todo task.In order to run the app on your device so just for and clone the repo and start to run index.html file.
+Todo list is a fully responsive website for creating a todo task.In order to run the app on your device so just for and clone the repo and start to run index.html file.
 Once you will run the file you notice the output on browser.
 create a task on click create button and also edit your task
